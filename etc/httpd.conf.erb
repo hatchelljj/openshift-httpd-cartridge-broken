@@ -133,7 +133,7 @@ MaxRequestsPerChild  0
 # prevent Apache from glomming onto all bound IP addresses (0.0.0.0)
 #
 #Listen 12.34.56.78:80
-Listen <%= ENV['OPENSHIFT_HTTPD_IP'] %>:<%= ENV['OPENSHIFT_HTTPD_PORT'] %>
+Listen <%= ENV['OPENSHIFT_HTTPD_IP']%>:<%= ENV['OPENSHIFT_HTTPD_PORT'] %>
 
 #
 # Dynamic Shared Object (DSO) Support
@@ -289,7 +289,7 @@ UseCanonicalName Off
 # documents. By default, all requests are taken from this directory, but
 # symbolic links and aliases may be used to point to other locations.
 #
-DocumentRoot "<%= ENV['OPENSHIFT_REPO_DIR'] %>"
+DocumentRoot /etc/httpd/"<%= ENV['OPENSHIFT_REPO_DIR'] %>"
 
 #
 # Each directory to which Apache has access can be configured with respect
